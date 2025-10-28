@@ -1,0 +1,588 @@
+.ayurveda-container {
+  background: #fafcf7;
+  padding: 48px 0 80px 0;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.badge {
+  display: inline-block;
+  background: #32724d;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 12px 0;
+  color: #22372b;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: #616e5d;
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.primary-btn {
+  background: #3e7a53;
+  color: #fff;
+  padding: 14px 34px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background: #2c5540;
+}
+
+.primary-btn-icon {
+  font-size: 1.35rem;
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #314e3a;
+  padding: 14px 32px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  border: 1.5px solid #d6e7db;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border 0.2s, background 0.2s;
+}
+
+.secondary-btn:hover {
+  background: #f2f8f4;
+  border-color: #b8dcc9;
+}
+
+.secondary-btn-icon {
+  font-size: 1.28rem;
+}
+
+
+.ayurveda-overview-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  padding: 32px 0;
+  background: #fafcf7;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.ayurveda-box {
+  background: #fff;
+  border: 1.5px solid #edece5;
+  border-radius: 14px;
+  padding: 28px 28px 32px 28px;
+  margin: 0 20px ;
+  box-sizing: border-box;
+  max-width: 1000px;
+  /* min-width: 340px; */
+  flex: 1;
+  box-shadow: 0 1px 6px 0 #0001;
+  margin: 0 auto;
+  /* justify-items: center; */
+}
+
+.ayurveda-heading {
+  display: flex;
+  align-items: center;
+  font-size: 1.29rem;
+  font-weight: bold;
+  color: #22432c;
+  margin-bottom: 14px;
+  letter-spacing: 0.1px;
+}
+
+.heading-icon {
+  font-size: 1.4rem;
+  margin-right: 7px;
+  color: #387a59;
+}
+
+.heading-icon-2 {
+  font-size: 1.35rem;
+  margin-right: 7px;
+  color: #7b9570;
+}
+
+.heading-text {
+  font-size: 1.04em;
+  font-weight: 700;
+}
+
+.ayurveda-description {
+  font-size: 1.04rem;
+  color: #547059;
+  margin-bottom: 18px;
+  margin-left: 1px;
+  line-height: 1.56;
+}
+
+.core-principles-title {
+  font-weight: 600;
+  color: #2a402e;
+  margin-bottom: 10px;
+}
+
+.core-principles-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.core-principles-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #315540;
+}
+
+.point-icon {
+  color: #43a26c;
+  font-size: 1.2em;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+.dosha-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 26px;
+  justify-content: space-between;
+}
+
+.dosha-card {
+  flex: 1;
+  background: #f7f8f7;
+  border-radius: 10px;
+  border: 1.5px solid #eae9e2;
+  text-align: center;
+  padding: 14px 0 10px 0;
+  display: flex;
+    flex-direction: column;
+  min-width: 90px;
+  transition: border 0.2s, background 0.2s;
+}
+
+.dosha-card .dosha-icon {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.dosha-card .dosha-icon img {
+  width: 40px; /* adjust size as needed */
+  height: 40px; /* or 'auto' to maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; /* center the image */
+}
+
+.dosha-title {
+  font-weight: 600;
+  color: #195b44;
+  font-size: 1.06rem;
+}
+
+.dosha-desc {
+  font-size: 0.97rem;
+  color: #929b91;
+  margin-top: 1px;
+}
+
+.dosha-pitta {
+  background: linear-gradient(96deg, #fff3f0 55%, #fff7f6 100%);
+  border-color: #fee3d8;
+}
+
+.dosha-pitta .dosha-title {
+  color: #c93716;
+}
+
+.dosha-kapha {
+  background: linear-gradient(96deg, #f6fbfa 55%, #f0faf7 100%);
+  border-color: #caeee2;
+}
+
+.dosha-kapha .dosha-title {
+  color: #32936f;
+}
+
+.assessment-btn {
+  width: 100%;
+  background: #3e7a53;
+  color: #fff;
+  padding: 14px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.assessment-btn:hover {
+  background: #27553a;
+}
+
+.ayurveda-image {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ayurveda-image img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ayurveda-image img:hover {
+  transform: scale(1.02);
+}
+
+.ayurveda-two-column {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.ayurveda-left {
+  flex: 1;
+}
+
+.ayurveda-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ayurveda-right .ayurveda-image {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .ayurveda-two-column {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 950px) {
+  .ayurveda-overview-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ayurveda-box {
+    max-width: 600px;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+.doshas-main {
+  padding: 34px 0 50px 0;
+  background: #fafcf7;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.doshas-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #1d2b1c;
+  margin-bottom: 8px;
+}
+
+.doshas-subtitle {
+  font-size: 1.13rem;
+  color: #669678;
+  margin-bottom: 35px;
+  font-weight: 500;
+}
+
+.doshas-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.dosha-card {
+  background: #fff;
+  border: 1.5px solid #eff3ed;
+  border-radius: 18px;
+  box-shadow: 0 1px 6px 0 #0001;
+  padding: 27px 28px 24px 28px;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dosha-icon {
+  font-size: 2.25rem;
+  margin-bottom: 17px;
+  
+}
+
+.feature-dosha-back{
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.feature-dosha{
+  width: 80px !important; /* adjust size as needed */
+  height: 80px !important; /* or 'auto' to maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; /* center the image */
+}
+
+.dosha-vata   { color: #87aab4; }
+.dosha-pitta  { color: #e66a4b; }
+.dosha-kapha  { color: #70b894; }
+
+.dosha-name {
+  font-size: 1.26rem;
+  font-weight: 700;
+  color: #203a1e;
+  margin-bottom: 4px;
+}
+
+.dosha-elem {
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: #538c6e;
+  margin-bottom: 4px;
+}
+
+.dosha-desc {
+  font-size: 0.99rem;
+  color: #445e50;
+  margin-bottom: 18px;
+}
+
+.dosha-seat-title, .dosha-qualities-title {
+  font-weight: 600;
+  color: #3d5844;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-size: 1.01rem;
+}
+
+.dosha-seat {
+  color: #538c6e;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+.dosha-qualities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}
+
+.dosha-qualities span {
+  background: #e9f3e8;
+  border-radius: 8px;
+  color: #316e48;
+  font-size: 0.97rem;
+  padding: 4px 14px;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .doshas-cards-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .dosha-card {
+    max-width: 400px;
+    width: 95%;
+  }
+}
+
+
+.bhutas-main {
+  padding: 36px 0 40px 0;
+  background: #fafcf7;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.bhutas-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #183723;
+  margin-bottom: 7px;
+  letter-spacing: 0.2px;
+}
+.bhutas-subtitle {
+  color: #87a992;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 38px;
+}
+.bhutas-cards-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 21px;
+  justify-content: center;
+  align-items: stretch;
+}
+.bhuta-card {
+  background: #fff;
+  border: 1.5px solid #ebece3;
+  border-radius: 15px;
+  box-shadow: 0 1px 5px 0 #0001;
+  min-width: 210px;
+  max-width: 240px;
+  flex: 1 1 210px;
+  padding: 27px 18px 20px 18px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0;
+}
+.bhuta-icon {
+  font-size: 2.1rem;
+  /* opacity: 0.24; */
+  margin-bottom: 7px;
+  margin-top: -4px;
+}
+.bhuta-earth { color: #c49d60; }
+.bhuta-water { color: #62bcb6; }
+.bhuta-fire  { color: #ff7f46; }
+.bhuta-air   { color: #53d589; }
+.bhuta-space { color: #9c9ec1; }
+
+.bhuta-name {
+  font-size: 1.11rem;
+  font-weight: 700;
+  color: #25392d;
+  margin-bottom: 3px;
+}
+
+.bhuta-desc {
+  font-size: 0.96rem;
+  color: #4d6660;
+  min-height: 36px;
+  margin-bottom: 12px;
+}
+
+.bhuta-section-title {
+  font-weight: 600;
+  color: #355c43;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-size: 0.98rem;
+}
+
+.bhuta-qualities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.bhuta-qualities span {
+  background: #e9f3e8;
+  color: #316e48;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 4px 12px 4px 12px;
+  border-radius: 8px;
+  margin-top: 3px;
+}
+
+.bhuta-list {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.bhuta-list li {
+  font-size: 0.96rem;
+  color: #51695d;
+  padding-left: 21px;
+  margin-bottom: 2px;
+  position: relative;
+}
+.bhuta-list li:before {
+  content: "•";
+  color: #b3ccb1;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 1150px) {
+  .bhutas-cards-row {
+    flex-wrap: wrap;
+  }
+  .bhuta-card {
+    min-width: 260px;
+    max-width: 290px;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .bhutas-cards-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .bhuta-card {
+    width: 95%;
+    min-width: 0;
+    max-width: 350px;
+  }
+}

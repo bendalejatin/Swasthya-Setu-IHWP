@@ -1,0 +1,79 @@
+.resources-container {
+  /* padding: 50px 20px; */
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.resource-hero {
+  background: linear-gradient(135deg, #2d5016, #68a340);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.resource-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+}
+
+.resource-hero-content p {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 300;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.resource-card {
+  background-color: #f9fff9;
+  border: 1px solid #d4eed8;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 100, 0, 0.05);
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 100, 0, 0.1);
+}
+
+.resource-heading {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1b5e20;
+}
+
+.resource-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resource-card li {
+  margin-bottom: 10px;
+}
+
+.resource-card a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.resource-card a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+}

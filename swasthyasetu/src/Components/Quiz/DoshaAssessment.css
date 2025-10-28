@@ -1,0 +1,181 @@
+.dq-container {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 32px;
+}
+.dq-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.dq-title {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 6px;
+  margin-top: 0px;
+}
+.dq-desc {
+  color: #588;
+  margin-bottom: 20px;
+}
+.dq-progress-bar {
+  height: 8px;
+  background: #e3e8ee;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  width: 100%;
+  overflow: hidden;
+}
+.dq-progress {
+  background: #10b981;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+.dq-question {
+  font-weight: 600;
+  font-size: 19px;
+  color: #263238;
+  margin-bottom: 16px;
+}
+.dq-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dq-option {
+  border: 1.5px solid #cfe5fa;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 14px;
+  margin-bottom: 15px;
+  background: #f4f8fb;
+  color: #263238;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dq-option:hover {
+  background: #e8f1fa;
+}
+.dq-selected {
+  background: #cbe4fd;
+  font-weight: bold;
+}
+.dq-next-btn {
+  background: #10b981;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 34px;
+  cursor: pointer;
+  float: right;
+  margin-top: 18px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  transition: background 0.25s;
+}
+
+.dq-next-btn:hover {
+  background: #7acfb7;
+}
+
+.dq-next-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.dq-prev-btn {
+  background: none;
+  border: 1px solid #bbb;
+  color: #888;
+  border-radius: 6px;
+  padding: 12px 28px;
+  cursor: pointer;
+  margin-right: 18px;
+  font-size: 1rem;
+}
+.dq-balance-table-section {
+  margin: 24px 0 18px 0;
+  overflow-x: auto;
+}
+.dq-balance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #fcfcfd;
+}
+.dq-balance-table th, .dq-balance-table td {
+  border: 1px solid #e2e6ec;
+  text-align: left;
+  padding: 10px 12px;
+  vertical-align: top;
+}
+.dq-dosha-bar {
+  height: 8px;
+  border-radius: 5px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  transition: width 0.5s;
+}
+.dq-dosha-badge {
+  padding: 4px 11px;
+  border-radius: 9px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.98em;
+  display: inline-block;
+}
+.dq-dosha-badge.pitta { background: #fa5252; }
+.dq-dosha-badge.kapha { background: #40c057; }
+.dq-dosha-badge.vata  { background: #4dabf7; }
+.dq-dominant-highlight {
+  margin: 18px 0 6px 0;
+  text-align: left;
+}
+.dq-dominant-badge {
+  padding: 9px 22px;
+  border-radius: 11px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.13em;
+  display: inline-block;
+  background: #fa5252;
+}
+.dq-dominant-badge.pitta { background: #fa5252; }
+.dq-dominant-badge.kapha { background: #40c057; }
+.dq-dominant-badge.vata  { background: #4dabf7; }
+.dq-characteristics {
+  margin-top: 15px;
+  margin-bottom: 13px;
+}
+.dq-actions { 
+  margin-top: 24px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.dq-next-btn.dq-secondary-action {
+  background: #f0f1f5;
+  color: #263238;
+  margin-left: 15px;
+}
+
+.dq-next-btn.dq-secondary-action:hover {
+  background: #10b981;
+}
+@media (max-width: 1100px) {
+  .dq-card { max-width: 100vw; padding: 12px !important; }
+}
+@media (max-width: 900px) {
+  .dq-balance-table-section { margin-top: 10px; }
+}
+@media (max-width: 600px) {
+  .dq-title { font-size: 1.3rem; }
+  .dq-card { padding: 0px 2px; }
+}
