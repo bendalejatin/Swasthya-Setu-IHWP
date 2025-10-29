@@ -25,7 +25,7 @@ A comprehensive healthcare platform built with MERN stack (React frontend, Node.
 
 ## About the Project  
 Swasthya Setu IHWP is designed to provide a one-stop digital solution for health-care management. Users can sign up, login, access features via the frontend; admins can manage data via an admin panel. The backend connects both and uses MongoDB for data persistence.  
-It was developed in the context of a hackathon to build a robust “event safety / healthcare” system, though it can be extended for broader healthcare workflows.
+It was developed in the context of a Indian Health Wellness And Psychology(IHWP) Project for Academics.
 
 ---
 
