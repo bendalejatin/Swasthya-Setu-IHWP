@@ -18,10 +18,8 @@ A comprehensive healthcare platform built with MERN stack (React frontend, Node.
 7. [Configuration & Environment Variables](#configuration--environment-variables)  
 8. [Database & API Endpoints](#database--api-endpoints)  
 9. [Testing](#testing)  
-10. [Deployment](#deployment)  
-11. [Contributing](#contributing)  
-12. [License](#license)  
-13. [Contact](#contact)  
+10. [License](#license)   
+11. [Contact](#contact)  
 
 ---
 
