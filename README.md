@@ -61,16 +61,8 @@ It was developed in the context of a hackathon to build a robust “event safety
 - Git & GitHub for version control  
 
 ---
-## 🧱 Architecture Diagram  
 
-```mermaid
-graph TD
-    A[User Interface (React Frontend)] -->|HTTP Requests| B[Express Backend (Node.js)]
-    C[Admin Panel (React)] -->|API Calls| B
-    B -->|CRUD Operations| D[(MongoDB Database)]
-    B -->|Auth Tokens| A
-    B -->|Admin Data| C
-```
+
 ## Getting Started  
 
 ### Prerequisites  
