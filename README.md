@@ -254,14 +254,14 @@ User App Routes
 * /signup - User Registration
 * /profile - User Dashboard
 * /dosha-assessment - Ayurvedic Quiz
-/todo-manager - Task & Health Management
-/features - App Features
-/resources - Wellness Resources
-/about - About Page
+* /todo-manager - Task & Health Management
+* /features - App Features
+* /resources - Wellness Resources
+* /about - About Page
 
 Admin Panel Routes
-/ - Admin Login
-/dashboard - Admin Dashboard with tabs:
+* / - Admin Login
+* /dashboard - Admin Dashboard with tabs:
    + Statistics
    + Users
    + Assessments
