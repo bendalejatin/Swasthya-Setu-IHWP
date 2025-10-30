@@ -42,7 +42,7 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 - Secure Authentication with JWT tokens
 - Real-time Data Sync across all modules 
 
-1. User App (React Frontend)
+### 1. User App (React Frontend)
 - Authentication: Login/Signup with JWT
 - Dosha Assessment: 12-question Ayurvedic quiz with personalized results & PDF reports
 - Todo Manager: Task management with health categories (water, exercise, food, meditation, sleep)
@@ -50,13 +50,13 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 - Reports: Auto-generated wellness insights (daily/weekly/monthly)
 - Profile: User dashboard with assessment history
 
-2. Admin Panel (React Dashboard)
+### 2. Admin Panel (React Dashboard)
 - Analytics: User stats, assessment metrics, dosha distribution charts
 - User Management: Complete user profiles, assessment history, health data
 - System Monitoring: All todos, reports, and wellness trends
 - Data Visualization: Charts for dosha distribution and daily assessments
 
-3. Backend API (Node.js/Express)
+### 3. Backend API (Node.js/Express)
 - Auth API: User registration, login with bcrypt & JWT
 - Assessment API: Save/retrieve dosha quiz results
 - Todo API: CRUD operations for tasks with categories/priorities
@@ -99,14 +99,14 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
    git clone https://github.com/bendalejatin/Swasthya-Setu-IHWP.git
    ```
 2. Navigate into each module (frontend, backend, admin) and install dependencies ( open each module in different Terminal):
- ```bash 
-cd swasthyasetu-backend  
-npm install  
-cd ../swasthyasetu  
-npm install  
-cd ../swasthyasetu-admin  
-npm install
-```
+    ```bash 
+   cd swasthyasetu-backend  
+   npm install  
+   cd ../swasthyasetu  
+   npm install  
+   cd ../swasthyasetu-admin  
+   npm install
+   ```
 
 ## Running Locally
 
@@ -291,8 +291,8 @@ npm start
 ---
 
 ## Database & API Endpoints
-## Database Schema (MongoDB)
-### Users Collection
+### Database Schema (MongoDB)
+#### 1. Users Collection
 ```javascript
 {
   _id: ObjectId,
@@ -302,7 +302,7 @@ npm start
   phone: String (optional)
 }
 ```
-### Assessments Collection
+#### 2. Assessments Collection
 ```javascript
 {
   _id: ObjectId,
@@ -321,7 +321,7 @@ npm start
   completedAt: Date (default: now)
 }
 ```
-### Todos Collection
+#### 3. Todos Collection
 ```javascript
 {
   _id: ObjectId,
@@ -336,7 +336,7 @@ npm start
   completedAt: Date
 }
 ```
-### HealthTracking Collection
+#### 4. HealthTracking Collection
 ```javascript
 {
   _id: ObjectId,
@@ -354,7 +354,7 @@ npm start
   notes: String
 }
 ```
-### Reports Collection
+#### 5. Reports Collection
 ```javascript
 {
   _id: ObjectId,
@@ -373,7 +373,7 @@ npm start
   createdAt: Date (default: now)
 }
 ```
-### Admins Collection
+#### 6. Admins Collection
 ```javascript
 {
   _id: ObjectId,
