@@ -14,8 +14,12 @@ A comprehensive healthcare platform built with MERN stack (React frontend, Node.
 5. [Project Structure](#project-structure)  
 6. [Usage](#usage)  
    - User Flow  
-   - Admin Flow  
-7. [Configuration & Environment Variables](#configuration--environment-variables)  
+   - Admin Flow
+   - Data Flow Architecture
+   - Security Flow
+7. [Navigation Structure](#navigation-structure)
+   - User App Routes  
+   - Admin Panel Routes
 8. [Database & API Endpoints](#database--api-endpoints)  
 9. [Testing](#testing)  
 10. [License](#license)   
@@ -123,79 +127,92 @@ Admin Module:
 cd swasthyasetu-admin  
 npm start  
 ```
-
+---
 
 ### Project Structure
-/swasthyasetu-backend
+- /swasthyasetu-backend
+  ```bash
    /controllers
    /models
    /routes
    createAdmin.js
    test-server.js
    server.js
-/swasthyasetu
+   ```
+- /swasthyasetu
+  ```bash
    /src
       /components
       /Auth
       /services
       App.js
-/swasthyasetu-admin
+  ```
+- /swasthyasetu-admin
+  ```bash
    /src
       /components
       /services
       App.js
+  ```
 
 - Each module has its own package.json and dependency setup.
 
+---
+
 ### Usage
-### User Flow (Frontend)
+## User Flow (Frontend)
 1. Authentication Flow
    Landing Page → Sign Up/Login → JWT Token → Dashboard Access
 2. Main User Journey
+   ```bash
    Home Page
     ↓
-Login/Register
+   Login/Register
     ↓
-User Dashboard
-    ├── Dosha Assessment
-    │   ├── 12 Questions Quiz
-    │   ├── Results & Recommendations
-    │   └── PDF Download
-    │
-    ├── Todo Manager
-    │   ├── Create Tasks (Categories: Water, Exercise, Food, Meditation, Sleep)
-    │   ├── Set Priority (Low/Medium/High)
-    │   ├── Mark Complete/Incomplete
-    │   └── Filter & Manage Tasks
-    │
-    ├── Health Tracking
-    │   ├── Water Intake Counter
-    │   ├── Exercise Minutes
-    │   ├── Sleep Hours
-    │   ├── Mood Selection
-    │   └── Daily Notes
-    │
-    ├── Reports
-    │   ├── Generate Reports (Daily/Weekly/Monthly)
-    │   ├── View Wellness Insights
-    │   ├── Progress Analytics
-    │   └── Delete Reports
-    │
-    └── Profile
-        ├── Personal Info
-        ├── Assessment History
-        └── Progress Overview
-3. Detailed User Actions
-- Assessment: Take quiz → Get dosha results → Download PDF → View recommendations
-- Tasks: Add todo → Set category/priority → Track completion → Filter by status
-- Health: Log daily metrics → Track progress → View trends
-- Reports: Generate insights → Review suggestions → Monitor wellness journey
+   User Dashboard
+       ├── Dosha Assessment
+       │   ├── 12 Questions Quiz
+       │   ├── Results & Recommendations
+       │   └── PDF Download
+       │
+       ├── Todo Manager
+       │   ├── Create Tasks (Categories: Water, Exercise, Food, Meditation, Sleep)
+       │   ├── Set Priority (Low/Medium/High)
+       │   ├── Mark Complete/Incomplete
+       │   └── Filter & Manage Tasks
+       │
+       ├── Health Tracking
+       │   ├── Water Intake Counter
+       │   ├── Exercise Minutes
+       │   ├── Sleep Hours
+       │   ├── Mood Selection
+       │   └── Daily Notes
+       │
+       ├── Reports
+       │   ├── Generate Reports (Daily/Weekly/Monthly)
+       │   ├── View Wellness Insights
+       │   ├── Progress Analytics
+       │   └── Delete Reports
+       │
+       └── Profile
+           ├── Personal Info
+           ├── Assessment History
+           └── Progress Overview
+   ```
+4. Detailed User Actions
+   - Assessment: Take quiz → Get dosha results → Download PDF → View recommendations
+   - Tasks: Add todo → Set category/priority → Track completion → Filter by status
+   - Health: Log daily metrics → Track progress → View trends
+   - Reports: Generate insights → Review suggestions → Monitor wellness journey
 
 
-### Admin Flow
+## Admin Flow
 1. Admin Authentication
+   ```bash
    Admin Login Page → Admin Credentials → Admin Dashboard
-2. Admin Dashboard Navigation
+   ```
+3. Admin Dashboard Navigation
+   ```bash
    Admin Dashboard
     ├── Statistics
     │   ├── Total Users Count
@@ -229,26 +246,29 @@ User Dashboard
         ├── User Report Patterns
         ├── Wellness Trends Analysis
         └── System Health Insights
-3. Admin Capabilities
-- Monitor: Track all user activities and system health
-- Analyze: View charts, statistics, and wellness trends
-  Manage: Oversee user data and system performance
-- Insights: Generate system-wide analytics and reports
+   ```
+4. Admin Capabilities
+   - Monitor: Track all user activities and system health
+   - Analyze: View charts, statistics, and wellness trends
+   - Manage: Oversee user data and system performance
+   - Insights: Generate system-wide analytics and reports
 
-### Data Flow Architecture
+## Data Flow Architecture
 1. User Data Flow:
-- User Action → Frontend (React) → API Call → Backend (Express) → Database (MongoDB) → Response → UI Update
+   - User Action → Frontend (React) → API Call → Backend (Express) → Database (MongoDB) → Response → UI Update
 2. Admin Data Flow:
-- Admin Query → Admin Panel → Admin API → Database Aggregation → Charts/Analytics → Dashboard Display
+   - Admin Query → Admin Panel → Admin API → Database Aggregation → Charts/Analytics → Dashboard Display
 
-### Security Flow
+## Security Flow
 - User: JWT token validation for protected routes
 - Admin: Separate admin token for dashboard access
 - API: Token verification middleware on all protected endpoints
 - Data: Encrypted passwords with bcrypt, CORS protection
 
+---
+
 ### Navigation Structure 
-User App Routes
+##User App Routes
 * / - Home Page
 * /login - User Login
 * /signup - User Registration
@@ -259,7 +279,7 @@ User App Routes
 * /resources - Wellness Resources
 * /about - About Page
 
-Admin Panel Routes
+##Admin Panel Routes
 * / - Admin Login
 * /dashboard - Admin Dashboard with tabs:
    + Statistics
@@ -268,9 +288,11 @@ Admin Panel Routes
    + Todos
    + Reports
 
+---
+
 ### Database & API Endpoints
 ## Database Schema (MongoDB)
-# Users Collection
+### Users Collection
 ```javascript
 {
   _id: ObjectId,
@@ -280,7 +302,7 @@ Admin Panel Routes
   phone: String (optional)
 }
 ```
-# Assessments Collection
+### Assessments Collection
 ```javascript
 {
   _id: ObjectId,
@@ -299,7 +321,7 @@ Admin Panel Routes
   completedAt: Date (default: now)
 }
 ```
-# Todos Collection
+### Todos Collection
 ```javascript
 {
   _id: ObjectId,
@@ -314,7 +336,7 @@ Admin Panel Routes
   completedAt: Date
 }
 ```
-# HealthTracking Collection
+### HealthTracking Collection
 ```javascript
 {
   _id: ObjectId,
@@ -332,7 +354,7 @@ Admin Panel Routes
   notes: String
 }
 ```
-# Reports Collection
+### Reports Collection
 ```javascript
 {
   _id: ObjectId,
@@ -351,7 +373,7 @@ Admin Panel Routes
   createdAt: Date (default: now)
 }
 ```
-## Admins Collection
+### Admins Collection
 ```javascript
 {
   _id: ObjectId,
@@ -400,6 +422,8 @@ Admin Panel Routes
    GET  /admin/stats              - Get system statistics
    GET  /admin/charts             - Get chart data
    ```
+
+---
    
 ### Testing
 
@@ -407,16 +431,16 @@ You can use Postman or similar tools to test APIs.
 Run frontend and admin locally and verify flows manually (login, signup, access control).
 Optionally add automated tests (Jest/Mocha) for backend routes and React components.
 
-
-
-
+---
 
 ### License
 
 This project is distributed under the MIT License. See LICENSE
  for details.
 
+---
+
 ### Contact
 
-Author: Jatin Bendale
-GitHub: @bendalejatin
+- Author: Jatin Bendale
+- GitHub: [@bendalejatin](https://github.com/bendalejatin)
