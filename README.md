@@ -29,22 +29,42 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 
 ---
 
-## Features  
-- User registration & authentication (JWT-based)  
-- Frontend dashboard for users (React)  
-- Admin panel for managing users/data (React or separate admin module)  
-- Backend APIs (Node.js + Express)  
-- MongoDB database for storage  
-- Responsive UI and secure handling of credentials  
-- Role-based access (User vs Admin)  
-- Expandable to integrate further modules (appointments, alerts, analytics)  
+## Key Features
+- Ayurvedic Dosha Assessment with personalized recommendations
+- Integrated Wellness Tracking (tasks + health metrics)
+- Automated Report Generation with AI insights
+- Admin Dashboard with analytics & user management
+- PDF Export for assessment results
+- Secure Authentication with JWT tokens
+- Real-time Data Sync across all modules 
 
+1. User App (React Frontend)
+- Authentication: Login/Signup with JWT
+- Dosha Assessment: 12-question Ayurvedic quiz with personalized results & PDF reports
+- Todo Manager: Task management with health categories (water, exercise, food, meditation, sleep)
+= Health Tracking: Daily metrics (water intake, exercise, sleep, mood, notes)
+- Reports: Auto-generated wellness insights (daily/weekly/monthly)
+- Profile: User dashboard with assessment history
+
+2. Admin Panel (React Dashboard)
+- Analytics: User stats, assessment metrics, dosha distribution charts
+- User Management: Complete user profiles, assessment history, health data
+- System Monitoring: All todos, reports, and wellness trends
+- Data Visualization: Charts for dosha distribution and daily assessments
+
+3. Backend API (Node.js/Express)
+- Auth API: User registration, login with bcrypt & JWT
+- Assessment API: Save/retrieve dosha quiz results
+- Todo API: CRUD operations for tasks with categories/priorities
+- Health API: Track daily wellness metrics
+- Report API: Generate automated wellness reports
+- Admin API: System statistics and user management
 ---
 
 ## Architecture & Tech Stack  
 **Frontend:**  
 - React (with routers, components, hooks)  
-- CSS / Styled-Components / any UI library (depending on your setup)  
+- CSS any UI library (Material UI)  
 
 **Backend:**  
 - Node.js + Express for RESTful APIs  
@@ -55,8 +75,7 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 - MongoDB (NoSQL)  
 
 **Dev Tools:**  
-- npm / yarn  
-- dotenv (for environment variables)  
+- npm / yarn 
 - Postman (for testing APIs)  
 - Git & GitHub for version control  
 
@@ -75,7 +94,7 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
    ```bash  
    git clone https://github.com/bendalejatin/Swasthya-Setu-IHWP.git
    ```
-2. Navigate into each module (frontend, backend, admin) and install dependencies:
+2. Navigate into each module (frontend, backend, admin) and install dependencies ( open each module in different Terminal):
  ```bash 
 cd swasthyasetu-backend  
 npm install  
@@ -88,81 +107,173 @@ npm install
 ### Running Locally
 
 Backend:
-
+ ```bash 
 cd swasthyasetu-backend  
-npm run dev   # or npm start  
-
+node server.js   # or npm start  
+```
 
 Frontend:
-
+ ```bash 
 cd swasthyasetu  
 npm start  
-
+```
 
 Admin Module:
-
+ ```bash 
 cd swasthyasetu-admin  
 npm start  
+```
 
-
-Ensure environment variables (see next section) are configured before you run.
 
 ### Project Structure
 /swasthyasetu-backend
    /controllers
    /models
    /routes
+   createAdmin.js
+   test-server.js
    server.js
 /swasthyasetu
    /src
       /components
-      /pages
+      /Auth
       /services
       App.js
 /swasthyasetu-admin
    /src
       /components
-      /pages
       /services
       App.js
 
-
-Each module has its own package.json and dependency setup.
+- Each module has its own package.json and dependency setup.
 
 ### Usage
 ### User Flow (Frontend)
+1. Authentication Flow
+   Landing Page → Sign Up/Login → JWT Token → Dashboard Access
+2. Main User Journey
+   Home Page
+    ↓
+Login/Register
+    ↓
+User Dashboard
+    ├── Dosha Assessment
+    │   ├── 12 Questions Quiz
+    │   ├── Results & Recommendations
+    │   └── PDF Download
+    │
+    ├── Todo Manager
+    │   ├── Create Tasks (Categories: Water, Exercise, Food, Meditation, Sleep)
+    │   ├── Set Priority (Low/Medium/High)
+    │   ├── Mark Complete/Incomplete
+    │   └── Filter & Manage Tasks
+    │
+    ├── Health Tracking
+    │   ├── Water Intake Counter
+    │   ├── Exercise Minutes
+    │   ├── Sleep Hours
+    │   ├── Mood Selection
+    │   └── Daily Notes
+    │
+    ├── Reports
+    │   ├── Generate Reports (Daily/Weekly/Monthly)
+    │   ├── View Wellness Insights
+    │   ├── Progress Analytics
+    │   └── Delete Reports
+    │
+    └── Profile
+        ├── Personal Info
+        ├── Assessment History
+        └── Progress Overview
+3. Detailed User Actions
+- Assessment: Take quiz → Get dosha results → Download PDF → View recommendations
+- Tasks: Add todo → Set category/priority → Track completion → Filter by status
+- Health: Log daily metrics → Track progress → View trends
+- Reports: Generate insights → Review suggestions → Monitor wellness journey
 
-User registers → receives token → logs in
-
-Access dashboard, perform allowed actions (e.g., update profile, view data)
-
-Logout
 
 ### Admin Flow
+1. Admin Authentication
+   Admin Login Page → Admin Credentials → Admin Dashboard
+2. Admin Dashboard Navigation
+   Admin Dashboard
+    ├── Statistics
+    │   ├── Total Users Count
+    │   ├── Total Assessments
+    │   ├── Recent Activity (7 days)
+    │   ├── Dosha Distribution Chart
+    │   └── Daily Assessment Trends
+    │
+    ├── Users Management
+    │   ├── View All Users List
+    │   ├── Select User → Detailed Profile
+    │   ├── Assessment History per User
+    │   ├── Todo Activity per User
+    │   ├── Health Data per User
+    │   └── Reports per User
+    │
+    ├── Assessments Overview
+    │   ├── All Assessment Results
+    │   ├── Dosha Distribution Analysis
+    │   ├── Assessment Completion Rates
+    │   └── Detailed Assessment View
+    │
+    ├── Todo Management
+    │   ├── System-wide Todo Overview
+    │   ├── User Task Analytics
+    │   ├── Category-wise Distribution
+    │   └── Completion Statistics
+    │
+    └── Reports Analytics
+        ├── All Generated Reports
+        ├── User Report Patterns
+        ├── Wellness Trends Analysis
+        └── System Health Insights
+3. Admin Capabilities
+- Monitor: Track all user activities and system health
+- Analyze: View charts, statistics, and wellness trends
+  Manage: Oversee user data and system performance
+- Insights: Generate system-wide analytics and reports
 
-Admin logs in via admin module
+### Data Flow Architecture
+1. User Data Flow:
+- User Action → Frontend (React) → API Call → Backend (Express) → Database (MongoDB) → Response → UI Update
+2. Admin Data Flow:
+- Admin Query → Admin Panel → Admin API → Database Aggregation → Charts/Analytics → Dashboard Display
 
-Views user data, manages content or users
+### Security Flow
+- User: JWT token validation for protected routes
+- Admin: Separate admin token for dashboard access
+- API: Token verification middleware on all protected endpoints
+- Data: Encrypted passwords with bcrypt, CORS protection
 
-Performs admin-only operations
+### Navigation Structure 
+User App Routes
+* / - Home Page
+* /login - User Login
+* /signup - User Registration
+* /profile - User Dashboard
+* /dosha-assessment - Ayurvedic Quiz
+/todo-manager - Task & Health Management
+/features - App Features
+/resources - Wellness Resources
+/about - About Page
 
-### Configuration & Environment Variables
+Admin Panel Routes
+/ - Admin Login
+/dashboard - Admin Dashboard with tabs:
+   + Statistics
+   + Users
+   + Assessments
+   + Todos
+   + Reports
 
-Create a .env file in the backend module (and optionally admin if required) with variables like:
-
-PORT=5000  
-MONGO_URI=your_mongodb_connection_string  
-JWT_SECRET=your_jwt_secret  
-
-
-For frontend / admin you might have environment variables such as REACT_APP_API_URL=http://localhost:5000 etc.
-
-Database & API Endpoints
-Database
+### Database & API Endpoints
+## Database
 
 Collections example: users, admins, events (or whichever modules you’ve built).
 
-### API Endpoints (Example)
+## API Endpoints
 
 POST /api/auth/register — user signup
 
