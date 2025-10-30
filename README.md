@@ -293,96 +293,96 @@ npm start
 ## Database & API Endpoints
 ### Database Schema (MongoDB)
 #### 1. Users Collection
-```javascript
-{
-  _id: ObjectId,
-  name: String (required),
-  email: String (required, unique),
-  password: String (required, hashed),
-  phone: String (optional)
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     name: String (required),
+     email: String (required, unique),
+     password: String (required, hashed),
+     phone: String (optional)
+   }
+   ```
 #### 2. Assessments Collection
-```javascript
-{
-  _id: ObjectId,
-  userId: ObjectId (ref: User, required),
-  type: String (enum: ["dosha"], required),
-  responses: [String] (required),
-  results: {
-    percentages: {
-      Vata: Number (required),
-      Pitta: Number (required),
-      Kapha: Number (required)
-    },
-    dominant: String (required),
-    secondary: String (required)
-  },
-  completedAt: Date (default: now)
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     userId: ObjectId (ref: User, required),
+     type: String (enum: ["dosha"], required),
+     responses: [String] (required),
+     results: {
+       percentages: {
+         Vata: Number (required),
+         Pitta: Number (required),
+         Kapha: Number (required)
+       },
+       dominant: String (required),
+       secondary: String (required)
+     },
+     completedAt: Date (default: now)
+   }
+   ```
 #### 3. Todos Collection
-```javascript
-{
-  _id: ObjectId,
-  userId: ObjectId (ref: User, required),
-  title: String (required),
-  description: String,
-  category: String (enum: ["general", "water", "exercise", "food", "meditation", "sleep"], default: "general"),
-  completed: Boolean (default: false),
-  priority: String (enum: ["low", "medium", "high"], default: "medium"),
-  dueDate: Date,
-  createdAt: Date (default: now),
-  completedAt: Date
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     userId: ObjectId (ref: User, required),
+     title: String (required),
+     description: String,
+     category: String (enum: ["general", "water", "exercise", "food", "meditation", "sleep"], default: "general"),
+     completed: Boolean (default: false),
+     priority: String (enum: ["low", "medium", "high"], default: "medium"),
+     dueDate: Date,
+     createdAt: Date (default: now),
+     completedAt: Date
+   }
+   ```
 #### 4. HealthTracking Collection
-```javascript
-{
-  _id: ObjectId,
-  userId: ObjectId (ref: User, required),
-  date: Date (required),
-  waterIntake: Number (default: 0),
-  exerciseMinutes: Number (default: 0),
-  meals: [{
-    name: String,
-    calories: Number,
-    time: Date
-  }],
-  sleepHours: Number (default: 0),
-  mood: String (enum: ["excellent", "good", "okay", "poor", "terrible"]),
-  notes: String
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     userId: ObjectId (ref: User, required),
+     date: Date (required),
+     waterIntake: Number (default: 0),
+     exerciseMinutes: Number (default: 0),
+     meals: [{
+       name: String,
+       calories: Number,
+       time: Date
+     }],
+     sleepHours: Number (default: 0),
+     mood: String (enum: ["excellent", "good", "okay", "poor", "terrible"]),
+     notes: String
+   }
+   ```
 #### 5. Reports Collection
-```javascript
-{
-  _id: ObjectId,
-  userId: ObjectId (ref: User, required),
-  date: Date (required),
-  type: String (enum: ["daily", "weekly", "monthly"], required),
-  data: {
-    completedTodos: Number,
-    totalTodos: Number,
-    waterIntake: Number,
-    exerciseMinutes: Number,
-    averageMood: String,
-    sleepHours: Number
-  },
-  suggestions: [String],
-  createdAt: Date (default: now)
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     userId: ObjectId (ref: User, required),
+     date: Date (required),
+     type: String (enum: ["daily", "weekly", "monthly"], required),
+     data: {
+       completedTodos: Number,
+       totalTodos: Number,
+       waterIntake: Number,
+       exerciseMinutes: Number,
+       averageMood: String,
+       sleepHours: Number
+     },
+     suggestions: [String],
+     createdAt: Date (default: now)
+   }
+   ```
 #### 6. Admins Collection
-```javascript
-{
-  _id: ObjectId,
-  username: String (required, unique),
-  password: String (required, hashed),
-  email: String (required, unique),
-  role: String (default: "admin")
-}
-```
+   ```javascript
+   {
+     _id: ObjectId,
+     username: String (required, unique),
+     password: String (required, hashed),
+     email: String (required, unique),
+     role: String (default: "admin")
+   }
+   ```
 
 ## API Endpoints
 
