@@ -427,9 +427,12 @@ npm start
    
 ## Testing
 
-You can use Postman or similar tools to test APIs.
-Run frontend and admin locally and verify flows manually (login, signup, access control).
-Optionally add automated tests (Jest/Mocha) for backend routes and React components.
+- You can use Postman or similar tools to test APIs.
+- Run frontend and admin locally and verify flows manually (login, signup, access control).
+- Test with multiple users
+- Verify database query performance
+- Check API response times
+- Monitor memory usage
 
 ---
 
