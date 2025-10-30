@@ -270,7 +270,8 @@ Admin Panel Routes
 
 ### Database & API Endpoints
 ## Database Schema (MongoDB)
-Users Collection
+# Users Collection
+```javascript
 {
   _id: ObjectId,
   name: String (required),
@@ -278,7 +279,9 @@ Users Collection
   password: String (required, hashed),
   phone: String (optional)
 }
-Assessments Collection
+```
+# Assessments Collection
+```javascript
 {
   _id: ObjectId,
   userId: ObjectId (ref: User, required),
@@ -295,7 +298,9 @@ Assessments Collection
   },
   completedAt: Date (default: now)
 }
-Todos Collection
+```
+# Todos Collection
+```javascript
 {
   _id: ObjectId,
   userId: ObjectId (ref: User, required),
@@ -308,7 +313,9 @@ Todos Collection
   createdAt: Date (default: now),
   completedAt: Date
 }
-HealthTracking Collection
+```
+# HealthTracking Collection
+```javascript
 {
   _id: ObjectId,
   userId: ObjectId (ref: User, required),
@@ -324,7 +331,9 @@ HealthTracking Collection
   mood: String (enum: ["excellent", "good", "okay", "poor", "terrible"]),
   notes: String
 }
-Reports Collection
+```
+# Reports Collection
+```javascript
 {
   _id: ObjectId,
   userId: ObjectId (ref: User, required),
@@ -341,7 +350,8 @@ Reports Collection
   suggestions: [String],
   createdAt: Date (default: now)
 }
-Admins Collection
+```
+## Admins Collection
 ```javascript
 {
   _id: ObjectId,
