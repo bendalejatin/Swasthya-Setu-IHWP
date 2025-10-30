@@ -269,24 +269,120 @@ Admin Panel Routes
    + Reports
 
 ### Database & API Endpoints
-## Database
-
-Collections example: users, admins, events (or whichever modules you’ve built).
+## Database Schema (MongoDB)
+Users Collection
+{
+  _id: ObjectId,
+  name: String (required),
+  email: String (required, unique),
+  password: String (required, hashed),
+  phone: String (optional)
+}
+Assessments Collection
+{
+  _id: ObjectId,
+  userId: ObjectId (ref: User, required),
+  type: String (enum: ["dosha"], required),
+  responses: [String] (required),
+  results: {
+    percentages: {
+      Vata: Number (required),
+      Pitta: Number (required),
+      Kapha: Number (required)
+    },
+    dominant: String (required),
+    secondary: String (required)
+  },
+  completedAt: Date (default: now)
+}
+Todos Collection
+{
+  _id: ObjectId,
+  userId: ObjectId (ref: User, required),
+  title: String (required),
+  description: String,
+  category: String (enum: ["general", "water", "exercise", "food", "meditation", "sleep"], default: "general"),
+  completed: Boolean (default: false),
+  priority: String (enum: ["low", "medium", "high"], default: "medium"),
+  dueDate: Date,
+  createdAt: Date (default: now),
+  completedAt: Date
+}
+HealthTracking Collection
+{
+  _id: ObjectId,
+  userId: ObjectId (ref: User, required),
+  date: Date (required),
+  waterIntake: Number (default: 0),
+  exerciseMinutes: Number (default: 0),
+  meals: [{
+    name: String,
+    calories: Number,
+    time: Date
+  }],
+  sleepHours: Number (default: 0),
+  mood: String (enum: ["excellent", "good", "okay", "poor", "terrible"]),
+  notes: String
+}
+Reports Collection
+{
+  _id: ObjectId,
+  userId: ObjectId (ref: User, required),
+  date: Date (required),
+  type: String (enum: ["daily", "weekly", "monthly"], required),
+  data: {
+    completedTodos: Number,
+    totalTodos: Number,
+    waterIntake: Number,
+    exerciseMinutes: Number,
+    averageMood: String,
+    sleepHours: Number
+  },
+  suggestions: [String],
+  createdAt: Date (default: now)
+}
+Admins Collection
+```javascript
+{
+  _id: ObjectId,
+  username: String (required, unique),
+  password: String (required, hashed),
+  email: String (required, unique),
+  role: String (default: "admin")
+}
+```
 
 ## API Endpoints
 
-POST /api/auth/register — user signup
+1. Authentication Routes (/)
+   POST /signup          - User registration
+   POST /login           - User login
 
-POST /api/auth/login — user login
+2. Assessment Routes (/api)
+   POST /api/assessment           - Save dosha assessment
+   GET  /api/assessment/:userId   - Get user assessments
 
-GET /api/users/profile — get user profile (protected)
+3. Todo & Health Routes (/api)
+   POST   /api/todos              - Create todo (🔒 Auth)
+   GET    /api/todos              - Get user todos (🔒 Auth)
+   PUT    /api/todos/:id          - Update todo (🔒 Auth)
+   DELETE /api/todos/:id          - Delete todo (🔒 Auth)
+   POST   /api/health             - Update health data (🔒 Auth)
+   GET    /api/health             - Get health data (🔒 Auth)
+   GET    /api/reports/generate   - Generate report (🔒 Auth)
+   GET    /api/reports            - Get user reports (🔒 Auth)
+   DELETE /api/reports/:id        - Delete report (🔒 Auth)
 
-GET /api/admin/users — get all users (admin only)
-
-PUT /api/users/:id — update user (protected)
-
-(You should list all endpoints you’ve implemented here with method, path, and short description.)
-
+4. Admin Routes (/admin)
+   POST /admin/login              - Admin login
+   GET  /admin/users              - Get all users
+   GET  /admin/users/:userId      - Get user details
+   GET  /admin/assessments        - Get all assessments
+   GET  /admin/todos              - Get all todos
+   GET  /admin/reports            - Get all reports
+   GET  /admin/stats              - Get system statistics
+   GET  /admin/charts             - Get chart data
+   
 ### Testing
 
 You can use Postman or similar tools to test APIs.
