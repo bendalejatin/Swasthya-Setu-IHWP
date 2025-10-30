@@ -88,12 +88,12 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 
 ## Getting Started  
 
-### Prerequisites  
+## Prerequisites  
 - Node.js & npm installed  
 - MongoDB instance (local or cloud e.g. MongoDB Atlas)  
 - Git (to clone the repo)  
 
-### Installation  
+## Installation  
 1. Clone the repo:  
    ```bash  
    git clone https://github.com/bendalejatin/Swasthya-Setu-IHWP.git
@@ -108,7 +108,7 @@ cd ../swasthyasetu-admin
 npm install
 ```
 
-### Running Locally
+## Running Locally
 
 Backend:
  ```bash 
@@ -129,7 +129,7 @@ npm start
 ```
 ---
 
-### Project Structure
+## Project Structure
 - /swasthyasetu-backend
   ```bash
    /controllers
@@ -159,7 +159,7 @@ npm start
 
 ---
 
-### Usage
+## Usage
 ## User Flow (Frontend)
 1. Authentication Flow
    Landing Page → Sign Up/Login → JWT Token → Dashboard Access
@@ -267,8 +267,8 @@ npm start
 
 ---
 
-### Navigation Structure 
-##User App Routes
+## Navigation Structure 
+## User App Routes
 * / - Home Page
 * /login - User Login
 * /signup - User Registration
@@ -279,7 +279,7 @@ npm start
 * /resources - Wellness Resources
 * /about - About Page
 
-##Admin Panel Routes
+## Admin Panel Routes
 * / - Admin Login
 * /dashboard - Admin Dashboard with tabs:
    + Statistics
@@ -290,7 +290,7 @@ npm start
 
 ---
 
-### Database & API Endpoints
+## Database & API Endpoints
 ## Database Schema (MongoDB)
 ### Users Collection
 ```javascript
@@ -425,7 +425,7 @@ npm start
 
 ---
    
-### Testing
+## Testing
 
 You can use Postman or similar tools to test APIs.
 Run frontend and admin locally and verify flows manually (login, signup, access control).
@@ -433,14 +433,14 @@ Optionally add automated tests (Jest/Mocha) for backend routes and React compone
 
 ---
 
-### License
+## License
 
 This project is distributed under the MIT License. See LICENSE
  for details.
 
 ---
 
-### Contact
+## Contact
 
 - Author: Jatin Bendale
 - GitHub: [@bendalejatin](https://github.com/bendalejatin)
