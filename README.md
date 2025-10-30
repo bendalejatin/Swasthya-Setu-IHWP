@@ -365,14 +365,19 @@ Admin Panel Routes
 ## API Endpoints
 
 1. Authentication Routes (/)
+   ```bash
    POST /signup          - User registration
    POST /login           - User login
+   ```
 
 2. Assessment Routes (/api)
+   ```bash
    POST /api/assessment           - Save dosha assessment
    GET  /api/assessment/:userId   - Get user assessments
+   ```
 
 3. Todo & Health Routes (/api)
+   ```bash
    POST   /api/todos              - Create todo (🔒 Auth)
    GET    /api/todos              - Get user todos (🔒 Auth)
    PUT    /api/todos/:id          - Update todo (🔒 Auth)
@@ -382,8 +387,10 @@ Admin Panel Routes
    GET    /api/reports/generate   - Generate report (🔒 Auth)
    GET    /api/reports            - Get user reports (🔒 Auth)
    DELETE /api/reports/:id        - Delete report (🔒 Auth)
+   ```
 
 4. Admin Routes (/admin)
+   ```bash
    POST /admin/login              - Admin login
    GET  /admin/users              - Get all users
    GET  /admin/users/:userId      - Get user details
@@ -392,6 +399,7 @@ Admin Panel Routes
    GET  /admin/reports            - Get all reports
    GET  /admin/stats              - Get system statistics
    GET  /admin/charts             - Get chart data
+   ```
    
 ### Testing
 
