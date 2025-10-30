@@ -46,7 +46,7 @@ It was developed in the context of a Indian Health Wellness And Psychology(IHWP)
 - Authentication: Login/Signup with JWT
 - Dosha Assessment: 12-question Ayurvedic quiz with personalized results & PDF reports
 - Todo Manager: Task management with health categories (water, exercise, food, meditation, sleep)
-= Health Tracking: Daily metrics (water intake, exercise, sleep, mood, notes)
+- Health Tracking: Daily metrics (water intake, exercise, sleep, mood, notes)
 - Reports: Auto-generated wellness insights (daily/weekly/monthly)
 - Profile: User dashboard with assessment history
 
